@@ -1,0 +1,6 @@
+{
+  "name": "TAMIL'SLAB (PRODUCTIVITY)",
+  "description": "A calm, elegant, distraction-free workspace, intelligent planner, notes, files, goals, focus timer, and private AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

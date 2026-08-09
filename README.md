@@ -1,91 +1,76 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 🌿 Tamil's Lab — AI Workspace & Productivity
 
-# Run and deploy your AI Studio app
+> Your all-in-one **AI-powered workspace**: tasks, calendar, notes, drawing canvas, habits, goals, focus timer — plus a workspace-aware Gemini assistant that actually knows your schedule.
 
-This contains everything you need to run your app locally.
+![React](https://img.shields.io/badge/React_19-61DAFB?logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?logo=google&logoColor=white)
 
-View your app in AI Studio: https://ai.studio/apps/2a788202-d539-4c65-91ae-469496c6fb45
+---
 
-## Run Locally
+## ✨ Features
 
-**Prerequisites:**  Node.js
+| View | What it does |
+| --- | --- |
+| ☀️ **Today** | Greeting banner, prioritized checklist, habit pie-chart, confetti on completion |
+| ✅ **Tasks** | P1–P4 priorities, subtasks, due times, project folders, recurring tasks |
+| 📅 **Calendar** | Color-coded events, focus sessions, locations & timelines |
+| 📝 **Notes** | Categorized notes + **Gemini summarizer** extracting bullets & action items |
+| ✏️ **Drawing Notes** | Whiteboard with flowchart editor, freehand canvas, and styled notes |
+| 📁 **Files** | Local file vault + **AI document analysis** (PDFs, text, spreadsheets) |
+| 🎯 **Habits** | Life-pillar habit tracking with day/week streaks |
+| 🚩 **Goals** | Auto **milestone breakdown** via Gemini API |
+| ⏱️ **Focus Timer** | Pomodoro + procedural soundscapes (Rain, White Noise, Ocean, Forest) |
+| ⚙️ **Settings** | Themes (light/dark), accent colors, AI personality & model selection |
 
+## 🤖 The Workspace AI Assistant
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+The chat assistant is tuned to **your real context** — it packages your notes, schedule, goals and active tasks from local storage and acts as an advisor that can even perform interface actions (reschedule tasks, create notes, schedule blocks).
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+## 🖥️ Native Desktop Experience
 
-ABOUT THIS APP :
-🌟 Core Views & Features
-The app is divided into 10 specialized views managed by the main layout (
+- `start_app.bat` — launches the server + opens Chrome/Edge in dedicated app mode
+- `stop_app.bat` — cleanly stops the local server
+- `create_shortcut.ps1` — adds a desktop shortcut with the custom app icon
 
-src/App.tsx
-):
+---
 
-1. 🌅 Today View (Daily Dashboard)
-Displays a greeting banner matching the current time of day.
-Shows a prioritized checklist of today's tasks and commitments.
-Incorporates a Recharts pie chart to visualize habit distribution.
-Triggers celebratory confetti animation upon completion of the day's priority tasks.
-2. 📝 Tasks View (Advanced Task Manager)
-Tracks items across 4 priority levels (P1 to P4).
-Supports subtask breakdowns, due dates/times, and project folders.
-Supports recurrence rules (daily, weekly, monthly) for repeat items.
-3. 🗓️ Calendar View (Interactive Schedule)
-Schedules events, appointments, and focus sessions.
-Provides color-coded categories, locations, and duration timelines.
-4. 📓 Notes View (Document & Thought Hub)
-Features custom categorization (Work, Personal, Ideas) and tags.
-Includes a Note Summarizer: Powered by the Gemini backend, it automatically extracts a 2-bullet summary and action items from any note.
-5. 🎨 Drawing Notes View (Interactive Whiteboard / Canvas)
-This is an incredibly rich component (DrawingNotesView.tsx) supporting three creative workflows:
-Schematic Mode: A drag-and-drop flowchart editor featuring pre-styled nodes (Process, Decision, Start, Database, Cloud, Text) with connectable arrows.
+## 🚀 Run locally
 
-6.Freehand Mode: An HTML5 Canvas editor containing draw, highlight, erase, stroke size, and custom shape tools (rectangle, circle, lines, arrows) with a rich color palette.
-Styled Note Mode: For taking rich, custom text documents.
+**Prerequisites:** [Node.js](https://nodejs.org)
 
-7. 📁 Files View (Local File Vault & AI Doc Analysis)
-Allows local files (PDFs, text files, spreadsheets) to be uploaded and stored as Base64 data URLs.
-Provides full preview and download capabilities directly in the app.
-AI Document Analysis: Extracts plaintext content and submits it to the Gemini server for answering questions, summarizing information, or pulling actionable checklists from files.
+```bash
+# 1. Install dependencies
+npm install
 
-8. 🔁 Habits View (Habit Tracker)
-Tracks habits categorized by life pillars (Mindfulness, Health, Fitness, Learning, etc.).
-Tracks daily/weekday streaks and logs historical completion dates inside local storage.
+# 2. Set your Gemini API key
+#    Copy .env.example to .env.local and fill in GEMINI_API_KEY
 
-10. 🎯 Goals View (Strategic AI Goal Breakdown)
-Tracks monthly, quarterly, or yearly goals with completion percentages.
-Milestone Generation: Integrates with the Gemini API to automatically break down a primary goal into a step-by-step sequence of actionable milestones.
+# 3. Run the app
+npm run dev
+```
 
-12. ⏱️ Focus Timer View (Procedural Noise Pomodoro)
-Features a Pomodoro timer with pre-configured or custom durations.
-Procedural Web Audio Engine (src/lib/ambientSound.ts): Procedurally generates high-quality background soundscapes (Rain, White Noise, Ocean Waves, Forest) locally in the browser using the Web Audio API without requiring any external audio files.
+Then open `http://localhost:3000`.
 
-10. ⚙️ Settings View
-Configures user profiles, accent colors (Indigo, Emerald, Violet, Amber, Slate, Rose), and dark/light modes.
-Allows selecting preferred AI personalities (Calm, Concise, Detailed) and models.
+> **Security:** your API key lives only in local `.env.local` — it is git-ignored and never committed.
 
-🧠 The Workspace AI Assistant
-Unlike standard chat interfaces, the chat assistant in Tamil’slab is built around the User's Workspace Context:
+## 📁 Project structure
 
-Whenever you type a message, the client automatically packages the state of your local storage (your name, today's schedule, notes, goals, active tasks, and past AI memory facts) and feeds it to the model.
-The Express API endpoint (server.ts:L42-L107) runs the Gemini model using a calm, highly intelligent, workspace-advisor instruction set.
-The AI can suggest direct interface actions, such as scheduling daily blocks, rescheduling overdue tasks, or creating new notes directly from your conversation.
+```
+├── server.ts            # Express + Gemini API endpoint
+├── src/                 # React views (Tasks, Calendar, Notes, Habits, Goals…)
+├── src/lib/ambientSound.ts  # Procedural Web Audio soundscapes
+├── public/              # Static assets & app icon
+├── vite.config.ts       # Vite + Tailwind config
+└── start_app.bat        # Windows desktop launcher
+```
 
-🖥️ Native Desktop Integration
-The workspace includes custom automation to run the application like a native desktop program on Windows:
+## 🧰 Tech stack
 
-start_app.bat
-: Starts the Node server in the background and launches Microsoft Edge or Google Chrome in standalone App Mode (--app=http://localhost:3000), using a dedicated user-data directory to keep your session separate from standard web browsing.
+**React 19 · TypeScript · Vite · Tailwind CSS · Express · Google Gemini API · Recharts · canvas-confetti · Web Audio API**
 
-stop_app.bat
-: Safely kills the running server processes.
+---
 
-create_shortcut.ps1
-: A PowerShell utility that generates clean shortcuts on your Windows Desktop (complete with the custom app_logo.ico) so you can launch and close the environment in one click.
+<p align="center">Made with 🧪 technical ambition</p>

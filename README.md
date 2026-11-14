@@ -1,6 +1,6 @@
-# 🌿 Tamil's Lab — AI Workspace & Productivity
+# ⚡ Tamil's Lab OS — Modular AI Workspace & Cognitive Second Brain
 
-> Your all-in-one **AI-powered workspace**: tasks, calendar, notes, drawing canvas, habits, goals, focus timer — plus a workspace-aware Gemini assistant that actually knows your schedule.
+> Your all-in-one **AI-powered operating system**: tasks, calendar, notes, drawing canvas, habits, goals, focus timer — plus a workspace-aware Gemini assistant that actually knows your schedule.
 
 ![React](https://img.shields.io/badge/React_19-61DAFB?logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
